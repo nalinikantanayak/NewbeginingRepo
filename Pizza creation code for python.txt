@@ -1,0 +1,25 @@
+class Pizza:
+    def __init__(self, size, crust, toppings):
+        self.size = size
+        self.crust = crust
+        self.toppings = toppings
+
+    def __str__(self):
+        return f"A {self.size}-inch pizza with {self.crust} crust and toppings: {', '.join(self.toppings)}"
+
+# Function to create a pizza
+def create_pizza():
+    size = input("Enter the size of the pizza (in inches): ")
+    crust = input("Enter the type of crust (thin, thick, stuffed, etc.): ")
+    toppings = input("Enter the toppings separated by commas: ").split(',')
+    return Pizza(size, crust, toppings)
+
+# Main function
+def main():
+    print("Welcome to the pizza creator!")
+    pizza = create_pizza()
+    print("Your pizza has been created:")
+    print(pizza)
+
+if __name__ == "__main__":
+    main()
